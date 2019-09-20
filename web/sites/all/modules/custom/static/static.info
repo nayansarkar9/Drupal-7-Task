@@ -1,0 +1,4 @@
+name = Static block
+description = Display a random message
+core = 7.x
+project = custom

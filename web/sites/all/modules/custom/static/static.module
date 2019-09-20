@@ -1,0 +1,28 @@
+<?php
+/**
+ * Implements static_block_info().
+ */
+function static_block_info() {
+  $blocks = array();
+  $blocks['static_block'] = array(
+    'info' => t('Static block'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements static_block_view().
+ */
+function static_block_view($block_name = '') {
+  if ($block_name == 'static_block') {
+    $content = variable_get('static_block_content', 'This is a custom static block');
+    $block = array(
+      'subject' => t('Hi there'),
+      'content' => t($content),
+    );
+
+    return $block;
+  }
+}
